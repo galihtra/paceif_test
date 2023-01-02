@@ -224,37 +224,19 @@ driver.find_element("xpath",'//*[@id="persyaratan"]/div/div/form/div[3]/button[2
 time.sleep(1)
 
 # Menambahkan nama dan persyaratan
-driver.get('http://localhost/paceif/master/surat')
-time.sleep(1) 
-
-driver.find_element("xpath",'//*[@id="content"]/div/div[4]/div[1]/a').click()
-time.sleep(1)
-
-nameLetter = "Pengajuan Kartu Mahasiwa"
-inputLetter = driver.find_element("xpath",'//*[@id="nama_surat"]')
-for i in nameLetter:
-    inputLetter.send_keys(i)
-    time.sleep(0.05)    
-
-desc = "Pengajuan Kartu Mahasiwa"
-inputDesc = driver.find_element("xpath",'//*[@id="keterangan"]')
-for i in desc:
-    inputDesc.send_keys(i)
-    time.sleep(0.05)    
-
-driver.find_element("xpath",'//*[@id="surat"]/div/div/form/div[3]/button[2]').click()
-time.sleep(1)
-
 driver.get('http://localhost/paceif/master/persyaratan')
 time.sleep(1) 
 
+# added
 driver.find_element("xpath",'//*[@id="content"]/div/div[4]/div[1]/a').click()
 time.sleep(1)
 
-driver.find_element("xpath",'//*[@id="select2-surat_id-container"]').click()
-time.sleep(0.05)    
+select = driver.find_element("xpath",'//*[@id="persyaratan"]/div/div/form/div[2]/div/div[1]/div/span/span[1]/span')
+select.send_keys('Surat Keterangan Beasiswa')
+select.click()
+time.sleep(0.5)
 
-requirement = "Melampirkan KTM"
+requirement = "Dokumen Pendukung"
 inputRequire = driver.find_element("xpath",'//*[@id="persyaratan"]/div/div/form/div[2]/div/div[2]/input')
 for i in requirement:
     inputRequire.send_keys(i)
