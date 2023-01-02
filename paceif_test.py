@@ -268,3 +268,23 @@ for i in requirement:
 
 driver.find_element("xpath",'//*[@id="persyaratan"]/div/div/form/div[3]/button[2]').click()
 time.sleep(1)
+
+# Konfirmasi surat
+driver.get('http://localhost/paceif/pengajuan')
+time.sleep(1) 
+
+edit = driver.find_element("xpath",'//*[@id="dataTable"]/tbody/tr[2]/td[6]/a/i')
+edit.click() 
+time.sleep(0.5) 
+
+proses = driver.find_element("xpath",'//*[@id="content"]/div/div[4]/div[1]/a[2]/span[2]')
+proses.click() 
+time.sleep(0.5) 
+
+# Cetak rekap
+driver.get('http://localhost/paceif/pengajuan')
+time.sleep(1) 
+
+cetak = driver.find_element("xpath",'//*[@id="content"]/div/div[4]/div[1]/a')
+cetak.click() 
+time.sleep(0.5) 
