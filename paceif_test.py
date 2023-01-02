@@ -10,7 +10,7 @@ driver.implicitly_wait(10)
 driver.get('http://localhost/paceif/auth/register')
 time.sleep(1) 
 
-nim = "4342201028"
+nim = "4342201029"
 inputnim = driver.find_element("xpath",'/html/body/div/div/div/div/div/div[3]/div/div/form/div[1]/input')
 for i in nim:
     inputnim.send_keys(i)
@@ -279,7 +279,7 @@ time.sleep(0.5)
 
 proses = driver.find_element("xpath",'//*[@id="content"]/div/div[4]/div[1]/a[2]/span[2]')
 proses.click() 
-time.sleep(0.5) 
+time.sleep(1) 
 
 # Cetak rekap
 driver.get('http://localhost/paceif/pengajuan')
@@ -287,4 +287,4 @@ time.sleep(1)
 
 cetak = driver.find_element("xpath",'//*[@id="content"]/div/div[4]/div[1]/a')
 cetak.click() 
-time.sleep(0.5) 
+time.sleep(2) 
