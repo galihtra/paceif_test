@@ -224,6 +224,30 @@ driver.find_element("xpath",'//*[@id="persyaratan"]/div/div/form/div[3]/button[2
 time.sleep(1)
 
 # Menambahkan nama dan persyaratan
+
+# Nama surat
+driver.get('http://localhost/paceif/master/surat')
+time.sleep(1) 
+
+driver.find_element("xpath",'//*[@id="content"]/div/div[4]/div[1]/a').click()
+time.sleep(1)
+
+nameLetter = "Pengajuan KIP"
+inputLetter = driver.find_element("xpath",'//*[@id="nama_surat"]')
+for i in nameLetter:
+    inputLetter.send_keys(i)
+    time.sleep(0.05)  
+
+desc = "Pengajuan beasiswa KIP"
+inputDesc = driver.find_element("xpath",'//*[@id="keterangan"]')
+for i in desc:
+    inputDesc.send_keys(i)
+    time.sleep(0.05)  
+
+driver.find_element("xpath",'//*[@id="surat"]/div/div/form/div[3]/button[2]').click()
+time.sleep(1)
+
+# Persyaratan
 driver.get('http://localhost/paceif/master/persyaratan')
 time.sleep(1) 
 
