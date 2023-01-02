@@ -8,8 +8,8 @@ driver.implicitly_wait(10)
 driver.get('http://localhost/paceif/auth')
 time.sleep(1) 
 
-admin = "admin"
-adminPass = "admin"
+admin = "4342201028"
+adminPass = "123456"
 
 inputAdmin = driver.find_element("xpath",'/html/body/div/div/div/div/div/div[3]/div/div/form/div[1]/input')
 for i in admin:
@@ -25,23 +25,16 @@ submit = driver.find_element("xpath",'/html/body/div/div/div/div/div/div[3]/div/
 submit.click() 
 time.sleep(0.5)  
 
-driver.get('http://localhost/paceif/master/persyaratan')
+# Invalid Buat Ajuan
+driver.get('http://localhost/paceif/dashboard')
 time.sleep(1) 
 
-# added
-driver.find_element("xpath",'//*[@id="content"]/div/div[4]/div[1]/a').click()
-time.sleep(1)
+createSubmission = driver.find_element("xpath",'//*[@id="content"]/div/div[4]/div/div/form/div/button[2]')
+createSubmission.click() 
+time.sleep(0.5)     
 
-select = driver.find_element("xpath",'//*[@id="persyaratan"]/div/div/form/div[2]/div/div[1]/div/span/span[1]/span')
-select.send_keys('Surat Keterangan Beasiswa')
-select.click()
-time.sleep(0.5)
+driver.get('http://localhost/paceif/pengajuan/upload_file/139')
+time.sleep(1) 
 
-requirement = "Dokumen Pendukung"
-inputRequire = driver.find_element("xpath",'//*[@id="persyaratan"]/div/div/form/div[2]/div/div[2]/input')
-for i in requirement:
-    inputRequire.send_keys(i)
-    time.sleep(0.05)    
-
-driver.find_element("xpath",'//*[@id="persyaratan"]/div/div/form/div[3]/button[2]').click()
-time.sleep(1)
+upload = driver.find_element("xpath",'//*[@id="2"]')
+upload.click() 
